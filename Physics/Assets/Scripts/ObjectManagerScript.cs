@@ -35,10 +35,13 @@ public class ObjectManagerScript : MonoBehaviour
                 //print(allSpheres[i]);
         }//end of sphere for loop
 
-       /* for (int i = 0; i < allPlanes.Length; i++)
+        for (int i = 0; i < allPlanes.Length; i++)
         {
-            print(allPlanes[i]);
-        }*/
+           for(int j = 0; j < allSpheres.Length; j++)
+            {
+                allSpheres[i].planeCollision(allPlanes[i]);
+            }
+        }
 
     }
 }
