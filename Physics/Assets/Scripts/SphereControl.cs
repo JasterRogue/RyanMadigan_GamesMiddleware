@@ -11,7 +11,7 @@ public class SphereControl : MonoBehaviour
     float d1;
     float d2;
     private float Mass = 1f;
-    readonly float radius = 0.5f;
+    float radius;
     readonly float coefficiantOfRestitution = 0.6f;
     float m1 = 1f;
     float m2 = 1f;
@@ -21,7 +21,9 @@ public class SphereControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // plane = FindObjectOfType<PlaneScript>();
+        // plane = FindObjectOfType<PlaneScript>();
+        radius = transform.localScale.x / 2;
+        previousPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -34,10 +36,8 @@ public class SphereControl : MonoBehaviour
     }
 
     public bool collidesWith(SphereControl otherSphere)
-    {
-        d1 = Vector3.Distance(otherSphere.previousPosition, previousPosition);
-        d2 = Vector3.Distance(transform.position, otherSphere.transform.position) - (radius + otherSphere.radius);
-        return Vector3.Distance(transform.position, otherSphere.transform.position) < (radius + otherSphere.radius);
+    {   
+       return Vector3.Distance(transform.position, otherSphere.transform.position) < (radius + otherSphere.radius);
     }
 
     public void sphereCollision(SphereControl sphere, SphereControl otherSphere)
@@ -46,35 +46,32 @@ public class SphereControl : MonoBehaviour
 
         Vector3 normal;
         Vector3 pointOfImpact;
-        
+
+        d1 = Vector3.Distance(otherSphere.previousPosition, previousPosition);
+        d2 = Vector3.Distance(transform.position, otherSphere.transform.position) - (radius + otherSphere.radius);
+
         //collision occurs
         normal = (otherSphere.transform.position - sphere.transform.position).normalized;
         pointOfImpact = transform.position + (radius * normal);
 
-         Vector3 v1 = ParallellComp(Velocity, normal) + PerpendicularComp(Velocity, normal);
-         Vector3 v2 = ParallellComp(Velocity, normal) + PerpendicularComp(Velocity, normal);
+        Vector3 u1 = ParallellComp(Velocity, normal);
+        Vector3 u2 = ParallellComp(otherSphere.Velocity, normal);
 
-         Vector3 u1 = ParallellComp(v1, normal);
-         Vector3 u2 = ParallellComp(v2, normal);
+        Vector3 spherePerp = PerpendicularComp (Velocity, normal);
+        Vector3 otherPerp  = PerpendicularComp(otherSphere.Velocity, normal);
 
-         Vector3 para = ParallellComp(Velocity, normal);
-         Vector3 perp = PerpendicularComp(Velocity, normal);
-
-         v1 = (m1 - m2 / m1 + m2) * u1 + (2 * m2 / m1 + m2) * u2;
-         v2 = (m2 - m1 / m1 + m2) * u2 + (2 * m1 / m1 + m2) * u1;
-
+        Vector3 v1 = (m1 - m2) / (m1 + m2) * u1 + 2 * m2 /( m1 + m2) * u2;
+        Vector3 v2 = (m2 - m1) / (m1 + m2) * u2 + 2 * m1 / (m1 + m2) * u1;
 
         timeOfImpact = Time.deltaTime * (d1 / (d1 - d2));
         transform.position -= Velocity * (Time.deltaTime - timeOfImpact);
 
-        Velocity = perp - coefficiantOfRestitution * para;
+        Velocity = spherePerp + v1 * coefficiantOfRestitution;
+        otherSphere.Velocity = otherPerp + v2 * otherSphere.coefficiantOfRestitution;
 
         transform.position += Velocity * (Time.deltaTime - timeOfImpact);
 
-
-        //print(v1);
-        //print(v2);
-    }
+    }//end of sphere collision
 
     public void planeCollision(PlaneScript plane)
     {

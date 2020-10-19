@@ -8,7 +8,7 @@ public class PlaneScript : MonoBehaviour
     public Vector3 NormalToPlane { get; private set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         DefinePoint(new Vector3(0, -1, 0), new Vector3(0.03f, 1, 0));
     }

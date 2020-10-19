@@ -11,9 +11,11 @@ public class ObjectManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //allSpheres = FindObjectsofType<PhysicsControl>();
         allSpheres = FindObjectsOfType(typeof(SphereControl)) as SphereControl[];
         allPlanes = FindObjectsOfType(typeof(PlaneScript)) as PlaneScript[];
+
+        //allPlanes[0].DefinePoint(new Vector3(0, -1, 0), new Vector3(0.03f, 1, 0));
+        //allPlanes[1].DefinePoint(new Vector3(-5.34f, 4.67f, 0.32f), new Vector3(90, 2, 90));
     }
 
     // Update is called once per frame
@@ -39,7 +41,7 @@ public class ObjectManagerScript : MonoBehaviour
         {
            for(int j = 0; j < allSpheres.Length; j++)
             {
-                allSpheres[i].planeCollision(allPlanes[i]);
+                allSpheres[j].planeCollision(allPlanes[i]);
             }
         }
 
