@@ -26,7 +26,6 @@ public class KnightControl : MonoBehaviour
         {
             knightAnimator.SetBool("isRunning", false);
             knightAnimator.SetBool("isIdle", true);
-            knightAnimator.SetBool("isJumping", false);
         }
 
 
@@ -41,13 +40,8 @@ public class KnightControl : MonoBehaviour
         {
             knightAnimator.SetBool("isRunningBackwards", false);
             knightAnimator.SetBool("isIdle", true);
-            knightAnimator.SetBool("isJumping", false);
         }
 
-        if(Input.GetKey(KeyCode.Space))
-        {
-            knightAnimator.SetBool("isJumping", true);
 
-        }
     }
 }
