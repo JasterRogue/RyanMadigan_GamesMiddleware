@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class KnightControl : MonoBehaviour
@@ -10,10 +11,31 @@ public class KnightControl : MonoBehaviour
 
     float speed = 0.0f;
     private float acceleration = 0.006f;
+    GameObject knight;
+    Transform leftWrist;
+    public GameObject sword;
 
     void Start()
     {
         knightAnimator = GetComponent<Animator>();
+        knight = GameObject.Find("knightprefab");
+        Transform[] allBones = knight.GetComponentsInChildren<Transform>();
+        Quaternion swordRotation = Quaternion.Euler(0.028f, 0.001f, -0.092f);
+
+        foreach (Transform bone in allBones)
+            if (bone.name == "L_wrist")
+            {
+                leftWrist = bone;
+            }
+
+        //print(leftWrist.name);
+
+        //print(knight);
+        //print("Left wrist" + leftWrist);
+
+        GameObject newSword = (GameObject) Instantiate(sword, leftWrist);
+        
+
     }
 
     // Update is called once per frame
