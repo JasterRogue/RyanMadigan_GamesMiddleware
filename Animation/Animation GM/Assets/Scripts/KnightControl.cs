@@ -13,25 +13,35 @@ public class KnightControl : MonoBehaviour
     private float acceleration = 0.006f;
     GameObject knight;
     Transform leftWrist;
+    Transform head; 
     public GameObject sword;
+    UnityChanController unityChan;
 
     void Start()
     {
         knightAnimator = GetComponent<Animator>();
         knight = GameObject.Find("knightprefab");
         Transform[] allBones = knight.GetComponentsInChildren<Transform>();
-        Quaternion swordRotation = Quaternion.Euler(0.028f, 0.001f, -0.092f);
+        unityChan = FindObjectOfType<UnityChanController>();
 
         foreach (Transform bone in allBones)
+        {
             if (bone.name == "L_wrist")
             {
                 leftWrist = bone;
             }
+        }
 
-        //print(leftWrist.name);
+        foreach(Transform bone in allBones)
+        {
+            if(bone.name == "head")
+            {
+                head = bone;
+            }
+        }
 
-        //print(knight);
-        //print("Left wrist" + leftWrist);
+        print("Unity Chan" + unityChan);
+        print("Head" + head);
 
         GameObject newSword = (GameObject) Instantiate(sword, leftWrist);
         
@@ -41,6 +51,8 @@ public class KnightControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        head.LookAt(unityChan.transform.position);
+
         knightAnimator.SetFloat("Blend", speed);
 
         //print("Speed: " + speed);

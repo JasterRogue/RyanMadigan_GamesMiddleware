@@ -11,9 +11,25 @@ public class UnityChanController : MonoBehaviour
     float speed = 0.0f;
     private float acceleration = 0.006f;
 
+    GameObject unityChan;
+    Transform head;
+    public GameObject crown;
+
     void Start()
     {
         unityChanAnimator = GetComponent<Animator>();
+        unityChan = GameObject.Find("unitychan");
+        Transform[] allBones = unityChan.GetComponentsInChildren<Transform>();
+
+        foreach (Transform bone in allBones)
+            if (bone.name == "Character1_Head")
+            {
+                head = bone;
+            }
+
+        print(head);
+
+        GameObject newCrown = (GameObject)Instantiate(crown, head);
     }
 
     // Update is called once per frame
@@ -48,6 +64,16 @@ public class UnityChanController : MonoBehaviour
         {
             unityChanAnimator.SetBool("isRunningBackwards", false);
             unityChanAnimator.SetBool("isIdle", true);
+        }
+
+        if (Input.GetKey(KeyCode.Z))
+        {
+            unityChanAnimator.SetBool("isWaving", true);
+        }
+
+        else
+        {
+            unityChanAnimator.SetBool("isWaving", false);
         }
     }
 }
