@@ -12,12 +12,12 @@ public class IKControl : MonoBehaviour
     public bool ikActive = false;
     public Transform rightHandObj = null;
     public Transform lookObj = null;
-    UnityChanController unityChan;
+    UnityChanMenu unityChan;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        unityChan = FindObjectOfType<UnityChanController>();
+        unityChan = FindObjectOfType<UnityChanMenu>();
 
         lookObj = unityChan.transform;
     }

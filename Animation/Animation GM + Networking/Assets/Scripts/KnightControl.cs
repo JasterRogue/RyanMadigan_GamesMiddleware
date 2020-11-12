@@ -15,14 +15,14 @@ public class KnightControl : MonoBehaviour
     Transform leftWrist;
     Transform head; 
     public GameObject sword;
-    UnityChanController unityChan;
+    UnityChanMenu unityChan;
 
     void Start()
     {
         knightAnimator = GetComponent<Animator>();
         knight = GameObject.Find("knightprefab");
         Transform[] allBones = knight.GetComponentsInChildren<Transform>();
-        unityChan = FindObjectOfType<UnityChanController>();
+        unityChan = FindObjectOfType<UnityChanMenu>();
 
         foreach (Transform bone in allBones)
         {

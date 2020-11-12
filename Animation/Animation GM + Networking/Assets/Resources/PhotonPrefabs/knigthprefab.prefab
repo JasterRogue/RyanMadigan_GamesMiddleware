@@ -917,6 +917,7 @@ GameObject:
   - component: {fileID: 4707246752500469652}
   - component: {fileID: 4753595282999284918}
   - component: {fileID: 221671481256676981}
+  - component: {fileID: -4388254949451404741}
   m_Layer: 0
   m_Name: knigthprefab
   m_TagString: Untagged
@@ -1004,6 +1005,19 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-4388254949451404741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612233260688078886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085686d4e61bcaa40a03f893a99ea34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword: {fileID: 1014989259798498, guid: 8fc40ebf5a41b30428929f5ba3697759, type: 3}
 --- !u!1 &4612256839913532186
 GameObject:
   m_ObjectHideFlags: 0

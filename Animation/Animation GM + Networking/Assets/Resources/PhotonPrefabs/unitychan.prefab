@@ -6968,6 +6968,7 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 7634334023461728249}
   - component: {fileID: -1644602105428484658}
+  - component: {fileID: 3687165860018889511}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Untagged
@@ -7039,7 +7040,7 @@ Rigidbody:
   m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -7059,10 +7060,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
+  observableSearch: 0
   Synchronization: 3
   OwnershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 3687165860018889511}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -7078,4 +7080,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf24129bb2012b4f96c6589c3537517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crown: {fileID: 0}
+  crown: {fileID: 5387077831837221123, guid: 8f09fa96e3e77494a87adcc5e378a95f, type: 3}
+--- !u!114 &3687165860018889511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0

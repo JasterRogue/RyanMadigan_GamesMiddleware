@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: unitychan
       objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.86
@@ -645,7 +649,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 10001440}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1315040047
+--- !u!114 &1315040045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -654,10 +658,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315040044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf24129bb2012b4f96c6589c3537517, type: 3}
+  m_Script: {fileID: 11500000, guid: 61e9cb2c61655e049b8f05ce287be344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crown: {fileID: 5387077831837221123, guid: 8f09fa96e3e77494a87adcc5e378a95f, type: 3}
+  crownMenu: {fileID: 5387077831837221123, guid: 8f09fa96e3e77494a87adcc5e378a95f,
+    type: 3}
 --- !u!1 &1332773601
 GameObject:
   m_ObjectHideFlags: 0

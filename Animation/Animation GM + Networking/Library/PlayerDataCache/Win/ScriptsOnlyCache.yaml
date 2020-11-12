@@ -19,6 +19,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PhotonTransformViewEditor
+    - Photon.Pun.PhotonViewInspector
     - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
@@ -58,9 +60,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -69,7 +81,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 17904}
+      Script: {instanceID: 12586}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -132,45 +144,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 12004}
+      Script: {instanceID: 11968}
     - Class: 114
-      Script: {instanceID: 12204}
+      Script: {instanceID: 12006}
     - Class: 114
-      Script: {instanceID: 12268}
+      Script: {instanceID: 12206}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12270}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12402}
     - Class: 114
-      Script: {instanceID: 12488}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12532}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12604}
+      Script: {instanceID: 12534}
     - Class: 114
-      Script: {instanceID: 12614}
+      Script: {instanceID: 12608}
     - Class: 114
-      Script: {instanceID: 12622}
+      Script: {instanceID: 12618}
     - Class: 114
-      Script: {instanceID: 12830}
+      Script: {instanceID: 12626}
     - Class: 114
-      Script: {instanceID: 12848}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 12856}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 12982}
+      Script: {instanceID: 12860}
     - Class: 114
-      Script: {instanceID: 13328}
+      Script: {instanceID: 12918}
     - Class: 114
-      Script: {instanceID: 13414}
+      Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 13444}
+      Script: {instanceID: 13334}
     - Class: 114
-      Script: {instanceID: 13452}
+      Script: {instanceID: 13420}
     - Class: 114
-      Script: {instanceID: 17888}
+      Script: {instanceID: 13450}
     - Class: 114
-      Script: {instanceID: 17894}
+      Script: {instanceID: 13458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -672,6 +684,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: 6806e2047be037653aa5c2f8f4e8c2d2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuickStartLobbyController
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -978,6 +996,12 @@ ScriptsOnlyBuild:
     className: PlayerUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameSetupController
+  - hash:
+      serializedVersion: 2
       Hash: 36799df4a819c9ae97e24fccbd1fa973
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1156,6 +1180,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
+  - hash:
+      serializedVersion: 2
+      Hash: 2cc75e7496f5de8be4d52b3f024467c8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: QuickStartRoomController
   - hash:
       serializedVersion: 2
       Hash: 7221ab9307aaa6b66a416e2e4561f420
@@ -1528,26 +1558,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 6806e2047be037653aa5c2f8f4e8c2d2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuickStartLobbyController
-  - hash:
-      serializedVersion: 2
-      Hash: 2cc75e7496f5de8be4d52b3f024467c8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: QuickStartRoomController
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameSetupController
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/MultiplayerScene.unity
-  playerPath: C:/Users/ryanm/Desktop/Animation GM.exe
+  playerPath: C:/Users/ryanm/Desktop/TestBuild/Animation GM.exe
