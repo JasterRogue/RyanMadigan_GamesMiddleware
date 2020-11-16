@@ -13,5 +13,5 @@ Instructions for Animation side of project
   - Z to wave
  
  Instructions for networking side of project
- - Press the Start button to begin
- - If you don't enter a game after a few seconds, click cancel and try again. Sometimes it doesn't work in first try
+ - Once you connect to the server, you can join a game
+ - Press the 'Start' button to begin
