@@ -24,8 +24,8 @@ public class UnityChanController : MonoBehaviour
     {
         pv = PhotonView.Get(this);
         unityChanAnimator = GetComponent<Animator>();
-        unityChan = GameObject.Find("unitychan");
-        Transform[] allBones = unityChan.GetComponentsInChildren<Transform>();
+        
+        Transform[] allBones = gameObject.GetComponentsInChildren<Transform>();
 
         foreach (Transform bone in allBones)
             if (bone.name == "Character1_Head")
