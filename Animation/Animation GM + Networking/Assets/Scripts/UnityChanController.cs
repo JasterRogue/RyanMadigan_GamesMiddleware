@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
+using UnityEngine.Windows.Speech;
+using System.Linq;
+using System;
 
 public class UnityChanController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // Speech Recogniser Code
+    private KeywordRecognizer keywordRecognizer;
+    private Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     Animator unityChanAnimator;
 
@@ -18,10 +23,20 @@ public class UnityChanController : MonoBehaviour
     Transform head;
     public GameObject crown;
     PhotonView pv;
-    Scene sc; 
 
     void Start()
     {
+        //Speech Recognition code
+        actions.Add("forward", forward);
+        actions.Add("back", back);
+        actions.Add("left", left);
+        actions.Add("right", right);
+        actions.Add("wave", wave);
+
+        keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+        keywordRecognizer.OnPhraseRecognized += recognisedSpeech;
+        keywordRecognizer.Start();
+
         pv = PhotonView.Get(this);
         unityChanAnimator = GetComponent<Animator>();
         
@@ -33,7 +48,7 @@ public class UnityChanController : MonoBehaviour
                 head = bone;
             }
 
-        print(head);
+        //print(head);
 
         GameObject newCrown = (GameObject)Instantiate(crown, head);
     }
@@ -124,5 +139,43 @@ public class UnityChanController : MonoBehaviour
     private void turnRight(float turningSpeed)
     {
         transform.Rotate(Vector3.up, turningSpeed * Time.deltaTime);
+    }
+
+    //Voice recognition methods
+    private void forward()
+    {
+        moveForward(speed);
+    }
+
+    private void back()
+    {
+        moveBack(speed);
+    }
+
+    private void left()
+    {
+        int i = 0;
+
+        while(i < 6)
+        {
+            turnLeft(turningSpeed);
+        }
+        
+    }
+
+    private void right()
+    {
+        turnRight(turningSpeed);
+    }
+
+    private void wave()
+    {
+        unityChanAnimator.SetBool("isWaving", true);
+    }
+
+    private void recognisedSpeech(PhraseRecognizedEventArgs speech)
+    {
+        Debug.Log(speech.text);
+        actions[speech.text].Invoke();
     }
 }

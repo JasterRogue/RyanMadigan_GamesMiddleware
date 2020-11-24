@@ -40,8 +40,8 @@ public class KnightControl : MonoBehaviour
             }
         }
 
-        print("Unity Chan" + unityChan);
-        print("Head" + head);
+        //print("Unity Chan" + unityChan);
+        //print("Head" + head);
 
         GameObject newSword = (GameObject) Instantiate(sword, leftWrist);
         
