@@ -27,15 +27,21 @@ public class UnityChanController : MonoBehaviour
     void Start()
     {
         //Speech Recognition code
-        actions.Add("forward", forward);
-        actions.Add("back", back);
-        actions.Add("left", left);
-        actions.Add("right", right);
-        actions.Add("wave", wave);
+        if (keywordRecognizer != null)
+        {
+            keywordRecognizer.Stop();
+           // keywordRecognizer.Dispose();
+        }
 
-        keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
-        keywordRecognizer.OnPhraseRecognized += recognisedSpeech;
-        keywordRecognizer.Start();
+       actions.Add("up", forward);
+       actions.Add("back", back);
+       actions.Add("left", left);
+       actions.Add("right", right);
+       actions.Add("wave", wave);
+
+       keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
+       keywordRecognizer.OnPhraseRecognized += recognisedSpeech;
+       keywordRecognizer.Start();
 
         pv = PhotonView.Get(this);
         unityChanAnimator = GetComponent<Animator>();
@@ -159,6 +165,7 @@ public class UnityChanController : MonoBehaviour
         while(i < 6)
         {
             turnLeft(turningSpeed);
+            i++;
         }
         
     }
@@ -178,4 +185,7 @@ public class UnityChanController : MonoBehaviour
         Debug.Log(speech.text);
         actions[speech.text].Invoke();
     }
+
+
+
 }

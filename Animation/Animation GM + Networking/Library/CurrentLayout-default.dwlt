@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 96
+  controlID: 102
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 97
+  controlID: 103
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 98
+  controlID: 104
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -535,20 +535,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/PhotonPrefabs
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/PhotonPrefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ryanm\Desktop\GMRepo\Animation\Animation GM + Networking
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 415}
-    m_SelectedIDs: c43b0000
-    m_LastClickedID: 15300
-    m_ExpandedIDs: 00000000f03a0000f23a0000f43a0000f63a0000f83a0000fa3a0000fc3a0000fe3a0000003b0000023b0000043b0000063b0000083b00000a3b00000c3b0000
+    scrollPos: {x: 0, y: 355}
+    m_SelectedIDs: c63b0000
+    m_LastClickedID: 15302
+    m_ExpandedIDs: 00000000f03a0000f23a0000f43a0000f63a0000f83a0000fa3a0000fc3a0000fe3a0000003b0000023b0000043b0000063b0000083b00000a3b00000c3b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000d25800009e580000d83a0000aa330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 70fbffff
+      m_ExpandedIDs: 908bffffac8bffffa08cffffa48cffff0ca2ffff28a2ffff1ca3ffff20a3ffffdcb8fffff8b8ffffecb9fffff0b9ffff1acfffff36cfffff2ad0ffff2ed0ffff0ce2ffff16f5ffff32f5ffff2ef6ffff32f6ffff70fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.09610101, y: -0.035518322, z: 0.0034279306, w: 0.9947461}
     speed: 2
-    m_Value: {x: -0.09610101, y: 0.035518322, z: -0.0034279306, w: -0.994746}
+    m_Value: {x: 0.096099645, y: -0.03551782, z: 0.003427882, w: 0.99473196}
   m_Size:
     m_Target: 5.0940146
     speed: 2
@@ -888,8 +888,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -351.5
     m_HBaseRangeMax: 351.5
-    m_VBaseRangeMin: -168
-    m_VBaseRangeMax: 168
+    m_VBaseRangeMin: -157.5
+    m_VBaseRangeMax: 157.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -906,11 +906,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 703
-      height: 336
+      height: 315
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 351.5, y: 168}
+    m_Translation: {x: 351.5, y: 157.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -918,9 +918,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -351.5
-      y: -168
+      y: -157.5
       width: 703
-      height: 336
+      height: 315
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 703, y: 336}
