@@ -23,6 +23,9 @@ public class UnityChanController : MonoBehaviour
     Transform head;
     public GameObject crown;
     PhotonView pv;
+    private bool voicedForward;
+    private bool voicedBack;
+    private bool voicedWave;
 
     void Start()
     {
@@ -71,7 +74,7 @@ public class UnityChanController : MonoBehaviour
 
                 speed = Mathf.Clamp(speed, 0, 1);
 
-                if (Input.GetKey(KeyCode.UpArrow))
+                if (Input.GetKey(KeyCode.UpArrow) || voicedForward)
                 {
                     speed += acceleration;
                     moveForward(speed);
@@ -86,7 +89,7 @@ public class UnityChanController : MonoBehaviour
                 }
 
 
-                if (Input.GetKey(KeyCode.DownArrow))
+                if (Input.GetKey(KeyCode.DownArrow) || voicedBack)
                 {
                     unityChanAnimator.SetBool("isRunningBackwards", true);
                     unityChanAnimator.SetBool("isIdle", false);
@@ -100,7 +103,7 @@ public class UnityChanController : MonoBehaviour
                     unityChanAnimator.SetBool("isIdle", true);
                 }
 
-                if (Input.GetKey(KeyCode.Z))
+                if (Input.GetKey(KeyCode.Z) || voicedWave)
                 {
                     unityChanAnimator.SetBool("isWaving", true);
                 }
@@ -150,19 +153,23 @@ public class UnityChanController : MonoBehaviour
     //Voice recognition methods
     private void forward()
     {
-        moveForward(speed);
+        voicedForward = true;
+
+        Invoke("resetVoiceBools", 2f);
     }
 
     private void back()
     {
-        moveBack(speed);
+        voicedBack = true;
+
+        Invoke("resetVoiceBools", 1.5f);
     }
 
     private void left()
     {
         int i = 0;
 
-        while(i < 6)
+        while(i < 50)
         {
             turnLeft(turningSpeed);
             i++;
@@ -172,12 +179,23 @@ public class UnityChanController : MonoBehaviour
 
     private void right()
     {
-        turnRight(turningSpeed);
+        int i = 0;
+
+        while(i < 50)
+        {
+            turnRight(turningSpeed);
+            i++;
+        }
+
     }
 
     private void wave()
     {
-        unityChanAnimator.SetBool("isWaving", true);
+        voicedWave = true;
+
+        Invoke("resetVoiceBools", 3f);
+
+
     }
 
     private void recognisedSpeech(PhraseRecognizedEventArgs speech)
@@ -185,6 +203,15 @@ public class UnityChanController : MonoBehaviour
         Debug.Log(speech.text);
         actions[speech.text].Invoke();
     }
+
+    private void resetVoiceBools()
+    {
+        voicedForward = false;
+        voicedBack = false;
+        voicedWave = false;
+    }
+
+
 
 
 

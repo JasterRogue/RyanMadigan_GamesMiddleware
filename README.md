@@ -15,3 +15,13 @@ Instructions for Animation side of project
  Instructions for networking side of project
  - Once you connect to the server, you can join a game
  - Press the 'Start' button to begin
+
+Voice Recognition Instructions
+- Voice recognition can be used once a player loads in the game
+- Say "Up" to move forward
+- Say "Back" to move back
+- Say "Left" to turn left
+- Say "Right" to turn right
+- Say "Wave" to wave
+
+Note: While testing, it seemed to have trouble picking up whenever I said "right". It could just be my accent. 
