@@ -13,19 +13,13 @@ public class BallScript : MonoBehaviour
 
     void Start()
     {
-        pv = PhotonView.Get(this);
-
-       if(PhotonNetwork.IsMasterClient)
-        {
-            spawnBall(); 
-        }
        
     }
 
-    [PunRPC]
-    void spawnBall()
+    public void shootBall(Vector3 pos, Vector3 direction)
     {
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), new Vector3(5, 5, 5), Quaternion.identity);
+        GameObject ball = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), pos, Quaternion.identity);
+        ball.GetComponent<Rigidbody>().AddForce(direction * 10);
     }
 
 }

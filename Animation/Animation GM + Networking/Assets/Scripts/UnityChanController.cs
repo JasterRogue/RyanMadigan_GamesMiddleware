@@ -10,8 +10,8 @@ using System;
 public class UnityChanController : MonoBehaviour
 {
     // Speech Recogniser Code
-    private KeywordRecognizer keywordRecognizer;
-    private Dictionary<string, Action> actions = new Dictionary<string, Action>();
+   // private KeywordRecognizer keywordRecognizer;
+   // private Dictionary<string, Action> actions = new Dictionary<string, Action>();
 
     Animator unityChanAnimator;
 
@@ -23,30 +23,12 @@ public class UnityChanController : MonoBehaviour
     Transform head;
     public GameObject crown;
     PhotonView pv;
-    private bool voicedForward;
-    private bool voicedBack;
-    private bool voicedWave;
+    BallScript myBallScript;
 
     void Start()
     {
-        //Speech Recognition code
-        if (keywordRecognizer != null)
-        {
-            keywordRecognizer.Stop();
-           // keywordRecognizer.Dispose();
-        }
-
-       actions.Add("up", forward);
-       actions.Add("back", back);
-       actions.Add("left", left);
-       actions.Add("right", right);
-       actions.Add("wave", wave);
-
-       keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
-       keywordRecognizer.OnPhraseRecognized += recognisedSpeech;
-       keywordRecognizer.Start();
-
         pv = PhotonView.Get(this);
+        myBallScript = GetComponent<BallScript>();
         unityChanAnimator = GetComponent<Animator>();
         
         Transform[] allBones = gameObject.GetComponentsInChildren<Transform>();
@@ -74,7 +56,7 @@ public class UnityChanController : MonoBehaviour
 
                 speed = Mathf.Clamp(speed, 0, 1);
 
-                if (Input.GetKey(KeyCode.UpArrow) || voicedForward)
+                if (Input.GetKey(KeyCode.UpArrow))
                 {
                     speed += acceleration;
                     moveForward(speed);
@@ -89,7 +71,7 @@ public class UnityChanController : MonoBehaviour
                 }
 
 
-                if (Input.GetKey(KeyCode.DownArrow) || voicedBack)
+                if (Input.GetKey(KeyCode.DownArrow))
                 {
                     unityChanAnimator.SetBool("isRunningBackwards", true);
                     unityChanAnimator.SetBool("isIdle", false);
@@ -103,7 +85,7 @@ public class UnityChanController : MonoBehaviour
                     unityChanAnimator.SetBool("isIdle", true);
                 }
 
-                if (Input.GetKey(KeyCode.Z) || voicedWave)
+                if (Input.GetKey(KeyCode.Z))
                 {
                     unityChanAnimator.SetBool("isWaving", true);
                 }
@@ -123,7 +105,18 @@ public class UnityChanController : MonoBehaviour
                     turnRight(turningSpeed);
                 }
 
+                //shoot
+
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                Vector3 dir = transform.forward;
+                Vector3 pos = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z + 5);
+
+
+                myBallScript.shootBall(pos, dir);
             }
+
+        }
         
     }//end of update()
 
@@ -149,70 +142,5 @@ public class UnityChanController : MonoBehaviour
     {
         transform.Rotate(Vector3.up, turningSpeed * Time.deltaTime);
     }
-
-    //Voice recognition methods
-    private void forward()
-    {
-        voicedForward = true;
-
-        Invoke("resetVoiceBools", 2f);
-    }
-
-    private void back()
-    {
-        voicedBack = true;
-
-        Invoke("resetVoiceBools", 1.5f);
-    }
-
-    private void left()
-    {
-        int i = 0;
-
-        while(i < 50)
-        {
-            turnLeft(turningSpeed);
-            i++;
-        }
-        
-    }
-
-    private void right()
-    {
-        int i = 0;
-
-        while(i < 50)
-        {
-            turnRight(turningSpeed);
-            i++;
-        }
-
-    }
-
-    private void wave()
-    {
-        voicedWave = true;
-
-        Invoke("resetVoiceBools", 3f);
-
-
-    }
-
-    private void recognisedSpeech(PhraseRecognizedEventArgs speech)
-    {
-        Debug.Log(speech.text);
-        actions[speech.text].Invoke();
-    }
-
-    private void resetVoiceBools()
-    {
-        voicedForward = false;
-        voicedBack = false;
-        voicedWave = false;
-    }
-
-
-
-
 
 }

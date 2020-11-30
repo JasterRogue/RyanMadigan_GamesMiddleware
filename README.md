@@ -6,6 +6,7 @@ Instructions for Animation side of project
   - W to go forward
   - S to go backward
   - Space to Wave
+  - A for inverse kinematics
   
  - UnityChan controls
   -Up arrow to go forward
@@ -17,7 +18,7 @@ Instructions for Animation side of project
  - Press the 'Start' button to begin
 
 Voice Recognition Instructions
-- Voice recognition can be used once a player loads in the game
+- Voice recognition can be used in the voice recognition scene 
 - Say "Up" to move forward
 - Say "Back" to move back
 - Say "Left" to turn left
