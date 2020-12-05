@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Windows.Speech;
 using System.Linq;
 using System;
+using System.IO;
 
 public class UnityChanController : MonoBehaviour
 {
@@ -110,10 +111,10 @@ public class UnityChanController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Q))
             {
                 Vector3 dir = transform.forward;
-                Vector3 pos = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z + 5);
+                Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
 
+                GameObject ball = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), pos, Quaternion.identity);
 
-                myBallScript.shootBall(pos, dir);
             }
 
         }

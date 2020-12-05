@@ -360,11 +360,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 933970620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e221ff0152108664fb76ed3078fa5235, type: 3}
+  m_Script: {fileID: 11500000, guid: 50ae3fbabe97877459b7648ea4fd875e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 8377305871395039838, guid: 86ec32b68a1a8e34ebd87ef01564c1fd,
-    type: 3}
 --- !u!1 &1077239053
 GameObject:
   m_ObjectHideFlags: 0

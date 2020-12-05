@@ -13,13 +13,17 @@ public class BallScript : MonoBehaviour
 
     void Start()
     {
-       
+
+        Rigidbody ballRB = GetComponent<Rigidbody>();
+        transform.position = transform.position + Camera.main.transform.forward * 2;
+        //ballRB.AddForce(gameObject.transform.forward * 10f);
+        ballRB.velocity = Camera.main.transform.forward * 40;
+        Destroy(this, 10f);
     }
 
     public void shootBall(Vector3 pos, Vector3 direction)
     {
-        GameObject ball = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), pos, Quaternion.identity);
-        ball.GetComponent<Rigidbody>().AddForce(direction * 10);
+        
     }
 
 }
