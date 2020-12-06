@@ -6970,7 +6970,6 @@ GameObject:
   - component: {fileID: -1644602105428484658}
   - component: {fileID: 3687165860018889511}
   - component: {fileID: -2470761622103732132}
-  - component: {fileID: 3270647955836090849}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Untagged
@@ -7085,6 +7084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crown: {fileID: 5387077831837221123, guid: 8f09fa96e3e77494a87adcc5e378a95f, type: 3}
+  health: 0
 --- !u!114 &3687165860018889511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7130,20 +7130,11 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: isWaving
+  - Type: 4
+    SynchronizeType: 0
+    Name: isDead
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
   - SynchronizeType: 0
     LayerIndex: 1
---- !u!114 &3270647955836090849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e221ff0152108664fb76ed3078fa5235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

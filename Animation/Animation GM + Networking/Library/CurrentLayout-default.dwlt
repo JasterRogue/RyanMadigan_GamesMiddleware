@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 677, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 69
+  controlID: 36
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 320
     height: 635
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 70
+  controlID: 37
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 71
+  controlID: 38
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,9 +296,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 357
+    x: 341
     y: 73
-    width: 729
+    width: 703
     height: 336
   m_ViewDataDictionary: {fileID: 0}
   m_ViewTransforms:
@@ -343,14 +343,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.6498284
+    - e00: 0.63343656
       e01: 0
       e02: 0
-      e03: 194.19629
+      e03: -14.046661
       e10: 0
-      e11: 0.6498284
+      e11: 0.63343656
       e12: 0
-      e13: -58.93892
+      e13: -96.24104
       e20: 0
       e21: 0
       e22: 1
@@ -407,14 +407,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.41649485
+    - e00: 0.63343656
       e01: 0
       e02: 0
-      e03: 2.5051575
+      e03: 29.953201
       e10: 0
-      e11: 0.41649485
+      e11: 0.63343656
       e12: 0
-      e13: 61.03608
+      e13: -14.241356
       e20: 0
       e21: 0
       e22: 1
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_AnimatorController: {fileID: 9100000, guid: 3c0ce96f98fce6043a74c8c66e512d28,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -5371470621433275397, guid: 3c0ce96f98fce6043a74c8c66e512d28,
+  - m_Target: {fileID: 8063965387681142105, guid: 3c0ce96f98fce6043a74c8c66e512d28,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -438,9 +438,9 @@ MonoBehaviour:
   m_MiniTool: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_CurrentEditor: 1
+  m_CurrentEditor: 0
   m_LayerEditor:
-    m_SelectedLayerIndex: 1
+    m_SelectedLayerIndex: 0
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -541,14 +541,15 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Resources/PhotonPrefabs
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\ryanm\Desktop\GMRepo\Animation\Animation GM + Networking
+  m_LastProjectPath: C:\Users\ryanm\OneDrive\Desktop\GMRepo\Animation\Animation GM
+    + Networking
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 415}
-    m_SelectedIDs: c23b0000
-    m_LastClickedID: 15298
-    m_ExpandedIDs: 00000000f63a0000f83a0000fa3a0000fc3a0000fe3a0000003b0000023b0000043b0000063b0000083b00000a3b00000c3b00000e3b0000103b0000123b000000ca9a3b
+    scrollPos: {x: 0, y: 199}
+    m_SelectedIDs: 08410000
+    m_LastClickedID: 16648
+    m_ExpandedIDs: 000000003e400000404000004240000044400000464000004a4000004c400000504000005240000054400000564000005840000086400000884000001a4100002c9000002e90000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +577,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f63a0000f83a0000fa3a0000fc3a0000fe3a0000003b0000023b0000043b0000063b0000083b00000a3b00000c3b00000e3b0000103b0000123b0000
+    m_ExpandedIDs: 000000003e40000040400000424000004440000046400000484000004a4000004c4000004e40000050400000524000005440000056400000584000005a400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -699,9 +700,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 049cffff
+      m_SelectedIDs: aa420000
       m_LastClickedID: 0
-      m_ExpandedIDs: 069cffffb4b3ffffc8c8fffff6cdffffe2ceffff84f3ffff7ef6ffff70fbffffa03d00000c5f0000a4640000
+      m_ExpandedIDs: 3e82fdff2eccfdff505dfeff0476feff989efeffc2f3ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

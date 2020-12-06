@@ -25,12 +25,17 @@ public class UnityChanController : MonoBehaviour
     public GameObject crown;
     PhotonView pv;
     BallScript myBallScript;
+    [SerializeField]
+    int health;
+    bool isDead;
 
     void Start()
     {
         pv = PhotonView.Get(this);
         myBallScript = GetComponent<BallScript>();
         unityChanAnimator = GetComponent<Animator>();
+        health = 100;
+        isDead = false;
         
         Transform[] allBones = gameObject.GetComponentsInChildren<Transform>();
 
@@ -50,6 +55,9 @@ public class UnityChanController : MonoBehaviour
     {
         
          if (pv.IsMine)
+            {
+
+            if (health > 0)
             {
 
                 Camera.main.transform.position = transform.position + new Vector3(0, 1, -3);
@@ -108,16 +116,31 @@ public class UnityChanController : MonoBehaviour
 
                 //shoot
 
-            if(Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    Vector3 dir = transform.forward;
+                    Vector3 pos = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z + 1);
+
+                    GameObject ball = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), pos, transform.rotation);
+                    ball.GetComponent<Rigidbody>().velocity = transform.forward;
+
+                }
+
+                if(Input.GetKeyDown(KeyCode.X))
+                {
+                    health -= 10; 
+                }
+
+            }//end of if hp > 0
+
+            else
             {
-                Vector3 dir = transform.forward;
-                Vector3 pos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
-
-                GameObject ball = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), pos, Quaternion.identity);
-
+                 unityChanAnimator.SetBool("isDead", true);
             }
 
-        }
+            
+
+        }//end of if pv is mine
         
     }//end of update()
 
@@ -142,6 +165,14 @@ public class UnityChanController : MonoBehaviour
     private void turnRight(float turningSpeed)
     {
         transform.Rotate(Vector3.up, turningSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "ball")
+        {
+            health -= 25;
+        }
     }
 
 }

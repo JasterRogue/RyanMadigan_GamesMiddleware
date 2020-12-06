@@ -20,6 +20,6 @@ public class LocalBall : MonoBehaviour
     [PunRPC]
     void spawnLocalBall()
     {
-        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), new Vector3(0,2,0), Quaternion.identity);
+        PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), new Vector3(5,2,5), Quaternion.identity);
     }
 }
