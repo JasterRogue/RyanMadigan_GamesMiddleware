@@ -9,13 +9,14 @@ Instructions for Animation side of project
   - A for inverse kinematics
   
  - UnityChan controls
-  -Up arrow to go forward
+  - Up arrow to go forward
   - Down Arrow to go back
   - Z to wave
  
  Instructions for networking side of project
  - Once you connect to the server, you can join a game
  - Press the 'Start' button to begin
+ - Press Q to fire a projectile in network scene
 
 Voice Recognition Instructions
 - Voice recognition can be used in the voice recognition scene 
